@@ -4,7 +4,7 @@ const Navbar = () => {
     const navOptions = <>
          <li><a>Home</a></li>
       
-         <li><a>Item 3</a></li>
+         
      </>
   return (
     <>
