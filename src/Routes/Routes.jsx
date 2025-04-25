@@ -20,8 +20,10 @@ import Order from "../Order/Order/Order";
         {
             path:'menu',
             element:<Menu></Menu>
-        },  {
-            path: 'order',
+        },
+          {
+            path: 'order/:category',
+
             element: <Order></Order>
           }
       ]
