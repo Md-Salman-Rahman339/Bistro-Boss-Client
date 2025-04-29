@@ -1,9 +1,10 @@
 import FoodCard from "../../components/FoodCard/FoodCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+
 import "swiper/css";
 import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
  const OrderTab = ({ items }) => {
 
     const pagination = {
