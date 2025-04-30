@@ -1,13 +1,15 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import axios from 'axios';
  
  const FoodCard = ({item}) => {
 
-    const {name, image, price, recipe} = item;
+    const {name, image, price, recipe,_id} = item;
     const {user}=useAuth();
     const navigate=useNavigate();
+    const location = useLocation();
     const handleAddToCart = food => {
         if (user && user.email) {
             const cartItem = {
@@ -18,28 +20,20 @@ import Swal from 'sweetalert2';
                 email: user.email
             };
     
-            fetch('http://localhost:5000/carts', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(cartItem)
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
+            axios.post('http://localhost:5000/carts', cartItem)
+            .then(res => {
+                console.log(res.data)
+                if(res.data.insertedId){
                     Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Food added to the cart',
+                        position: "top-end",
+                        icon: "success",
+                        title: `${name} added to your cart`,
                         showConfirmButton: false,
                         timer: 1500
-                    });
+                      });
                 }
+
             })
-            .catch(error => {
-                console.error('Error adding to cart:', error);
-            });
         } else {
             Swal.fire({
                 title: "You are not Logged In",
@@ -51,7 +45,7 @@ import Swal from 'sweetalert2';
                 confirmButtonText: "Yes, login!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate('/login');
+                    navigate('/login', {state: {from: location}})
                 }
             });
         }
