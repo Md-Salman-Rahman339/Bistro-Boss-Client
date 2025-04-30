@@ -5,12 +5,12 @@ import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
  import Swal from 'sweetalert2'
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext);
+    // const {createUser} = useContext(AuthContext);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    // const { register, handleSubmit, formState: { errors } } = useForm();
  
     const onSubmit = data => {
         console.log(data);
