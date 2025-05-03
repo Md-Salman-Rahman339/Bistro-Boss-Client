@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import Secret from "../pages/Shared/Secret/Secret";
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../Dashboard/Cart/Cart";
+import AllUsers from "../Dashboard/AllUsers/AllUsers";
 
 
 
@@ -54,6 +55,13 @@ import Cart from "../Dashboard/Cart/Cart";
           path: 'cart',
           element: <Cart></Cart>
         }
+        ,
+ 
+         // admin routes
+         {
+           path: 'users',
+           element: <AllUsers></AllUsers>
+         }
       ]
     }
   ]);
