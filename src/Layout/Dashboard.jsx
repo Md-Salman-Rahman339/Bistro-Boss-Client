@@ -1,10 +1,11 @@
-import { FaAd, FaCalendar, FaHome,FaSearch, FaList, FaShoppingCart } from "react-icons/fa";
+import { FaAd, FaCalendar, FaHome,FaSearch, FaList, FaShoppingCart, FaEnvelope } from "react-icons/fa";
  import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
  
  
  const Dashboard = () => {
     const [cart]=useCart();
+    const isAdmin=true;
      return (
          <div className="flex">
              {/* dashboard side bar */}
@@ -45,6 +46,11 @@ import useCart from "../hooks/useCart";
                          <NavLink to="/order/salad">
                              <FaSearch></FaSearch>
                              Menu</NavLink>
+                     </li>
+                     <li>
+                         <NavLink to="/order/contact">
+                             <FaEnvelope></FaEnvelope>
+                             Contact</NavLink>
                      </li>
                  </ul>
              </div>
