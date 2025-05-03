@@ -23,13 +23,13 @@ const Navbar = () => {
 
          {
              user ? <>
-                <span>{user.displayName}</span>
+                <li><span>{user.displayName}</span></li>
                 {/* <div className="avatar">
                 <div className="mask mask-squircle w-24">
                     <img src={user.photoURL} />
                 </div>
                 </div> */}
-                 <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                <li> <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button></li>
              </> : <>
                  <li><Link to="/login">Login</Link></li>
              </>
