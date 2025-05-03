@@ -10,11 +10,29 @@ import { FaTrashAlt, FaUsers } from "react-icons/fa";
      const { data: users = [],refetch } = useQuery({
          queryKey: ['users'],
          queryFn: async () => {
-             const res = await axiosSecure.get('/users');
+             const res = await axiosSecure.get('/users', {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('access-token')}`
+                }
+            });
              return res.data;
          }
      })
      const handleMakeAdmin = user =>{
+        axiosSecure.patch(`/users/admin/${user._id}`)
+        .then(res =>{
+            console.log(res.data)
+            if(res.data.modifiedCount > 0){
+                refetch();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${user.name} is an Admin Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
          
      }
  
@@ -68,12 +86,13 @@ import { FaTrashAlt, FaUsers } from "react-icons/fa";
                                  <th>{index+1}</th>
                                  <td>{user.name}</td>
                                  <td>{user.email}</td>
-                                 <td> <button
+                                 <td> {user.role==='admin'?'Admin': <button
+                                        
                                          onClick={() => handleMakeAdmin(user)}
                                          className="btn btn-lg bg-orange-500">
                                          <FaUsers className="text-white 
                                          text-2xl"></FaUsers>
-                                     </button></td>
+                                     </button>}</td>
                                      <td>
                                      <button
                                          onClick={() => handleDeleteUser(user)}
