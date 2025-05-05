@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { HelmetProvider } from 'react-helmet-async';
+
 import {
  
   RouterProvider,
@@ -21,11 +21,11 @@ createRoot(document.getElementById('root')).render(
 
 <QueryClientProvider client={queryClient}>
 
-<HelmetProvider>
+
   <div className='max-w-6xl mx-auto'>
        <RouterProvider router={router} />
      </div>
-  </HelmetProvider>
+
 </QueryClientProvider>
 </AuthProvider>
 </React.StrictMode>,

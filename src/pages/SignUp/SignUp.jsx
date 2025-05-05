@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
-import { Helmet } from "react-helmet";
+
 import { Link, useNavigate } from "react-router-dom";
  import Swal from 'sweetalert2'
 import useAxiosPublic from "../../hooks/useAxiosPublic";
@@ -52,9 +52,7 @@ const SignUp = () => {
 
     return (
        <>
-           <Helmet>
-                 <title>Bistro Boss | Sign Up</title>
-             </Helmet>
+       
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">

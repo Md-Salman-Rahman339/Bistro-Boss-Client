@@ -12,6 +12,7 @@ import Secret from "../pages/Shared/Secret/Secret";
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../Dashboard/Cart/Cart";
 import AllUsers from "../Dashboard/AllUsers/AllUsers";
+import AddItems from "../Dashboard/AddItems/AddItems";
 
 
 
@@ -61,7 +62,11 @@ import AllUsers from "../Dashboard/AllUsers/AllUsers";
          {
            path: 'users',
            element: <AllUsers></AllUsers>
-         }
+         },
+         {
+          path: 'addItems',
+          element: <AddItems></AddItems>
+        },
       ]
     }
   ]);

@@ -10,7 +10,7 @@ import { useQuery } from "@tanstack/react-query";
          queryKey: [user?.email, 'isAdmin' ],
          queryFn: async () => {
              const res = await axiosSecure.get(`/users/admin/${user.email}`);
-             console.log(res.data);
+            //  console.log(res.data);
              return res.data?.admin;
          }
      })

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { LoadCanvasTemplate, loadCaptchaEnginge, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+
 import Swal from 'sweetalert2';
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
 const Login = () => {
@@ -22,7 +22,7 @@ const Login = () => {
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
-        console.log(email,password)
+        // console.log(email,password)
         signIn(email, password)
         .then(result => {
             const user = result.user;
@@ -51,9 +51,7 @@ const Login = () => {
     }
   return (
     <>
-    <Helmet>
-                 <title>Bistro Boss | Login</title>
-             </Helmet>
+   
 
     <div className="hero min-h-screen bg-base-200">
     <div className="hero-content flex-col md:flex-row-reverse">
