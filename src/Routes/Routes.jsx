@@ -13,6 +13,7 @@ import Dashboard from "../Layout/Dashboard";
 import Cart from "../Dashboard/Cart/Cart";
 import AllUsers from "../Dashboard/AllUsers/AllUsers";
 import AddItems from "../Dashboard/AddItems/AddItems";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -61,7 +62,7 @@ import AddItems from "../Dashboard/AddItems/AddItems";
          // admin routes
          {
            path: 'users',
-           element: <AllUsers></AllUsers>
+           element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
          },
          {
           path: 'addItems',
