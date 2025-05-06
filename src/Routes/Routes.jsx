@@ -17,6 +17,7 @@ import AdminRoute from "./AdminRoute";
 import ManageItems from "../Dashboard/ManageItems/ManageItems";
 import UpdateItem from "../Dashboard/UpdateItem/UpdateItem";
 import Payment from "../Dashboard/Payment/Payment";
+import PaymentHistory from "../Dashboard/PaymentHistory/PaymentHistory";
 
 
 
@@ -65,6 +66,10 @@ import Payment from "../Dashboard/Payment/Payment";
         {
           path: 'payment',
           element: <Payment></Payment>
+        },
+        {
+          path: 'paymentHistory',
+          element: <PaymentHistory></PaymentHistory>
         },
  
          // admin routes
