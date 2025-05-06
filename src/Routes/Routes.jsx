@@ -15,6 +15,7 @@ import AllUsers from "../Dashboard/AllUsers/AllUsers";
 import AddItems from "../Dashboard/AddItems/AddItems";
 import AdminRoute from "./AdminRoute";
 import ManageItems from "../Dashboard/ManageItems/ManageItems";
+import UpdateItem from "../Dashboard/UpdateItem/UpdateItem";
 
 
 
@@ -47,7 +48,8 @@ import ManageItems from "../Dashboard/ManageItems/ManageItems";
           {
             path: 'secret',
             element: <PrivateRoute><Secret></Secret></PrivateRoute>
-          }
+          },
+         
       ]
     },
     {
@@ -68,6 +70,11 @@ import ManageItems from "../Dashboard/ManageItems/ManageItems";
          {
           path: 'manageItems',
           element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
+        },
+        {
+          path: 'updateItem/:id',
+          element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
         },
          {
           path: 'addItems',

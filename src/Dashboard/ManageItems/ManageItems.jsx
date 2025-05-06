@@ -4,6 +4,7 @@ import useMenu from "../../hooks/useMenu";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
  
  
@@ -81,12 +82,14 @@ import Swal from "sweetalert2";
                                      </td>
                                      <td className="text-right">${item.price}</td>
                                      <td>
+                                         <Link to={`/dashboard/updateItem/${item._id}`} >
+                                         
                                          <button
                                          
                                          className="btn btn-ghost btn-lg bg-orange-500">
                                              <FaEdit className="text-white 
                                          "></FaEdit>
-                                     </button>
+                                     </button></Link>
                                      </td>
                                      <td>
                                      <button
