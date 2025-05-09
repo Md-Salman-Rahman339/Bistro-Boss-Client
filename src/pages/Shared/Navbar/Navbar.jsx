@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
 import useCart from '../../../hooks/useCart';
+import useAdmin from '../../../hooks/useAdmin';
 
 const Navbar = () => {
+    const [isAdmin]=useAdmin();
 
     const { user, logOut } = useContext(AuthContext);
     const [cart] = useCart();
@@ -19,11 +21,17 @@ const Navbar = () => {
          {/* <li><Link to="/order">Order Food</Link></li> */}
          <li><Link to="/order/salad">Order Food</Link></li>
          <li><Link to="/secret">Secret</Link></li>
+         {
+            user && isAdmin && <li> <Link to="/dashboard/adminHome"> Dashboard </Link> </li>
+         }
+         {
+            user && !isAdmin && <li><Link to="/dashboard/userHome">Dashboard</Link></li>
+         }
          <li><Link to="/dashboard/cart"><button className='btn'> <FaShoppingCart className='mr-2'></FaShoppingCart>  <div className="badge badge-secondary">+{cart.length}</div> </button></Link></li>
 
          {
              user ? <>
-                <li><span>{user.displayName}</span></li>
+                {/* <li><span>{user.displayName}</span></li> */}
                 {/* <div className="avatar">
                 <div className="mask mask-squircle w-24">
                     <img src={user.photoURL} />
