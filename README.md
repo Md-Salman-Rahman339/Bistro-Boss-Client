@@ -1,12 +1,51 @@
-# React + Vite
+# 🍳 Bistro Boss
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Bistro Boss** is a full-featured restaurant management web application built using the **MERN stack** (MongoDB, Express.js, React with Vite, and Node.js). It streamlines and simplifies daily restaurant operations, offering an intuitive dashboard for managing reservations, orders, menus, and staff — all in one place.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔗 **Frontend (React + Vite):** [https://bistro-boss-52409.web.app/](https://bistro-boss-52409.web.app/)
+- 🔗 **Backend API (Node + Express):** [https://bistro-server-1.onrender.com](https://bistro-server-1.onrender.com)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+- **🔐 User Authentication**
+  - Secure registration and login system using **JWT-based authentication**.
+
+- **📅 Reservation Management**
+  - View, create, update, and delete customer reservations.
+  - Organized schedule view for upcoming bookings.
+
+- **🧾 Order Management**
+  - Real-time tracking of placed and completed orders.
+  - Role-based order access and updates.
+
+- **📋 Menu Management**
+  - Add, edit, or remove menu items with images, prices, and categories.
+  - Dynamic menu update for customers.
+
+- **👥 Staff Management**
+  - Manage staff members, assign roles (admin, chef, waiter), and set schedules.
+
+- **📊 Dashboard**
+  - Visual summary of key performance indicators like total revenue, orders, reservations, and staff count.
+  - Role-specific dashboards for admins and staff.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React, Vite, Tailwind CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB (Cloud)
+- **Authentication:** JSON Web Tokens (JWT)
+- **Hosting:**
+  - Frontend: Firebase
+  - Backend: Render
+
+---
+
+
+
